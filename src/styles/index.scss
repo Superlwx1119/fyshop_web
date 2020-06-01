@@ -1,0 +1,470 @@
+// @import './variables.scss'; // Already imported in style-resources-loader
+// @import './mixins.scss'; // Already imported in style-resources-loader
+@import './transition.scss';
+@import './svgicon.scss';
+
+/* Global scss */
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:focus,
+a:hover {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+label {
+  font-weight: 700;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+// Refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+aside {
+  background: #eef1f6;
+  color: #2c3e50;
+  padding: 8px 24px;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  display: block;
+  line-height: 32px;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  a {
+    color: #337ab7;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+.fixed-width {
+  .el-button--mini {
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.filter-container {
+  padding-bottom: 10px;
+
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
+.text-center {
+  text-align: center
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &.draft {
+    background: #d0d0d0;
+  }
+
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+/* 业务区域 start */
+.btn-group {
+  padding: 40px 0px 20px;
+}
+
+.btn {
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 40px;
+  background: linear-gradient(to right, #df6e23, #f4a433);
+  color: #fff;
+  border: 0;
+  width: 400px;
+  height: 100px;
+  border-radius: 40px;
+}
+
+/* 业务区域 end */
+
+
+/* flex区域 start */
+.df {
+  display: flex;
+  align-items: center;
+}
+
+[class*="df-"] {
+  display: flex;
+}
+
+.df-c {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.df-r {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.df-w {
+  flex-wrap: wrap;
+}
+
+.fw-w {
+  flex-wrap: wrap;
+}
+
+
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.df1 {
+  flex: 1;
+}
+
+
+.df-sa {
+  justify-content: space-around;
+}
+
+/* flex区域 end */
+
+/* 首行缩进 */
+.ti2 {
+  text-indent: 2em;
+}
+
+
+/*单行超出省略*/
+.txt-omit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+.hv-cp {
+  cursor: pointer;
+}
+
+/* 强制换行 */
+.txt-wrap {
+  word-wrap: break-word;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+/* 容器 start */
+.db {
+  display: block;
+}
+
+.di {
+  display: inline;
+}
+
+.dib {
+  display: inline-block;
+}
+
+/* 容器 end */
+
+/* 对齐方式 start */
+.vam {
+  vertical-align: middle;
+}
+
+.vat {
+  vertical-align: top;
+}
+
+.vab {
+  vertical-align: bottom;
+}
+
+/* 对齐方式 end */
+
+
+/* 边框 start */
+.bd-b {
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.bd-r {
+  border-right: 1px solid #EBEBEB;
+}
+
+.bd-l {
+  border-left: 1px solid #EBEBEB;
+}
+
+.bd-t {
+  border-top: 1px solid #EBEBEB;
+}
+
+/* 边框 end */
+
+
+/* 清除空格 */
+.c-sp {
+  font-size: 0;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+/* 定位 start */
+.poa {
+  position: absolute;
+}
+
+.por {
+  position: relative;
+}
+
+.pos {
+  position: static;
+}
+
+.pof {
+  position: fixed;
+}
+
+/* 定位 end */
+
+// 栅格系统
+.col-lg_5 {
+  width: 5%;
+}
+
+.col-lg-1 {
+  width: 10%;
+}
+
+.col-lg-1_6 {
+  width: 16.66666666666667%;
+}
+
+.col-lg-2 {
+  width: 20%;
+}
+
+.col-lg-2_5 {
+  width: 25%;
+}
+
+.col-lg-3 {
+  width: 30%;
+}
+
+.col-lg-3_3 {
+  width: 33.333333%;
+}
+
+.col-lg-3_5 {
+  width: 35%;
+}
+
+.col-lg-4 {
+  width: 40%;
+}
+
+.col-lg-5 {
+  width: 50%;
+}
+
+.col-lg-5_5 {
+  width: 50%;
+}
+
+.col-lg-6 {
+  width: 60%;
+}
+
+.col-lg-7 {
+  width: 70%;
+}
+
+.col-lg-8 {
+  width: 80%;
+}
+
+.col-lg-9 {
+  width: 90%;
+}
+
+.col-lg-10 {
+  width: 100%;
+}
+
+// 重置Element
+.dialog-issuingVoucher {
+  .el-table__body-wrapper {
+    max-height: 420px;
+  }
+
+  .el-table__body-wrapper {
+    overflow-y: auto;
+  }
+}
+
+.freight {
+  .el-form-item__content {
+    .el-input {
+      width: 100px;
+    }
+  }
+
+  .el-select {
+    .el-input--suffix {
+      width: 200px;
+    }
+  }
+}
+
+.rules-none {
+  label.el-form-item__label {
+    padding-left: 10px;
+  }
+}
+
+//卡券
+.card-conf {
+  .card-box {
+    .el-dialog__body {
+      text-align: center;
+    }
+  }
+}
+
+.commodity-list {
+  .el-input-number--medium {
+    width: 160px;
+  }
+}
+
+.line-chart-search {
+  .el-form-item--medium .el-form-item__content {
+    line-height: 32px;
+  }
+}
+
+//轮播图设置
+#banner {
+  .el-upload {
+    border: 1px solid #d9d9d9;
+  }
+}
+
+//系统设置图片上传按钮
+#freight .avatars-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
